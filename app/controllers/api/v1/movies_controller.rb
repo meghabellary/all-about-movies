@@ -7,6 +7,6 @@ class Api::V1::MoviesController < ApiController
   end
 
   def show
-    render json: {movie: Movie.find(params[:id])}
+    render json: Movie.find(params[:id]),  serializer: MovieShowSerializer
   end
 end
