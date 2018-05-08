@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_05_06_160013) do
     t.string "title", null: false
     t.text "plot", null: false
     t.date "release_date"
+    t.string "trailer_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
