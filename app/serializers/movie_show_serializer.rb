@@ -1,5 +1,5 @@
 class MovieShowSerializer < ActiveModel::Serializer
-  attributes :id, :title, :plot, :release_date, :trailer_url, :actor_list
+  attributes :image_url, :id, :title, :plot, :release_date, :trailer_url, :actor_list
   has_many :reviews
 
   def actor_list
