@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import ReviewForm from '../containers/ReviewForm'
 import ReactPlayer from 'react-player'
-const imdb = require('imdb-api');
 
 class MovieShow extends Component {
   constructor(props){
@@ -14,14 +13,16 @@ class MovieShow extends Component {
 
   getImdbdata() {
     let imdbId = this.state.movieInfo.imbd_movie_id
-    imdb.getById(imdbId, {apiKey: '50903f61', timeout: 30000})
-    .then(response => {
-      console.log(response)
+    fetch(`http://www.omdbapi.com/?i=${imdbId}&apikey=50903f61`)
+    .then(response => response.json())
+    .then(body => {
+      console.log(body)
       this.setState({
-        imdbMovieInfo: response, ratings: response.ratings
+        imdbMovieInfo: body, ratings: body.Ratings
       });
     })
-}
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+ }
 
   addNewReview(formPayload) {
     fetch('/api/v1/reviews.json', {
@@ -103,7 +104,7 @@ class MovieShow extends Component {
     return(
       <div><h1>Movie details:</h1>
         <img src={this.state.movieInfo.image_url} width="100" height="100" />
-        <div>{this.state.imdbMovieInfo.rated}</div>
+        <div>{this.state.imdbMovieInfo.Rated}</div>
         <div><h3>Ratings:</h3>{ratingList}</div>
         <div><h2>{this.state.movieInfo.title}</h2></div>
         <p>{this.state.movieInfo.plot}</p>
