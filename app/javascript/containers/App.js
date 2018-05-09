@@ -4,7 +4,6 @@ import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 import MovieListContainer from "./MovieListContainer";
 import MovieShow from "../components/MovieShow";
 
-
 const App = props => {
   return(
     <Router history={browserHistory}>

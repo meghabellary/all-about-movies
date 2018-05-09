@@ -6,6 +6,7 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.text :plot, null:false
       t.date :release_date
       t.string :trailer_url, null: false
+      t.string :imbd_movie_id
 
       t.timestamps
     end
