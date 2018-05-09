@@ -58,7 +58,7 @@ class ReviewForm extends React.Component {
             handleInput={this.handleBodyInput}
           />
         <div className="button-group">
-          <button className="button" onClick={this.handleClearForm}>Clear</button>
+          <button type="submit" className="button" onClick={this.handleClearForm}>Clear</button>
           &nbsp;
           <input className="button" type="submit" value="Submit" />
         </div>

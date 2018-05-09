@@ -15,3 +15,17 @@
  *= require foundation_and_overrides
 
  */
+
+/*body{
+  background-image: url("movie.jpg")
+}*/
+
+
+
+h1{
+  text-align: center
+}
+
+.panel{
+  text-align: center;
+}

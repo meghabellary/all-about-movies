@@ -103,11 +103,11 @@ class MovieShow extends Component {
     })
     return(
       <div><h1>Movie details:</h1>
-        <img src={this.state.movieInfo.image_url} width="100" height="100" />
+      <div><h2>{this.state.movieInfo.title}</h2></div>
+        <img src={this.state.movieInfo.image_url} width="150" height="200" />
         <div>{this.state.imdbMovieInfo.Rated}</div>
-        <div><h3>Ratings:</h3>{ratingList}</div>
-        <div><h2>{this.state.movieInfo.title}</h2></div>
         <p>{this.state.movieInfo.plot}</p>
+        <div><h3>Ratings:</h3>{ratingList}</div>
         <div><h3>Actors:</h3>{actors}</div>
         <div><h2>Reviews:</h2>{reviewList}</div>
         <div>
