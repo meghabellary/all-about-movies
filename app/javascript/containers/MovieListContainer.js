@@ -34,7 +34,7 @@ class MovieListContainer extends Component {
   render(){
     let movieComponents = this.state.movies.map((movie) => {
       return (
-        <div key={movie.id}>
+        <div className="panel" key={movie.id}>
           <Link to={`movies/${movie.id}`}>{ movie.title }</Link>
         </div>
           );
@@ -42,9 +42,9 @@ class MovieListContainer extends Component {
 
   return(
       <div><h1>List of Movies</h1>
-        <div>
-        {movieComponents}
-      </div>
+        <div className="small-12 medium-8 columns medium-centered">
+          {movieComponents}
+        </div>
       </div>
     )
   }
