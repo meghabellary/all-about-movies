@@ -33,10 +33,12 @@ ActiveRecord::Schema.define(version: 2018_05_06_160013) do
   end
 
   create_table "movies", force: :cascade do |t|
+    t.string "image_url", null: false
     t.string "title", null: false
     t.text "plot", null: false
     t.date "release_date"
     t.string "trailer_url", null: false
+    t.string "imbd_movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
