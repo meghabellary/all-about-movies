@@ -78,16 +78,16 @@ class MovieShow extends Component {
     // console.log(this.state.movieInfo.actor_list)
     let actors = this.state.actors.map((actor) => {
       return (
-        <div key={actor.id}>
+        <li key={actor.id}>
           <Link to={`actors/${actor.id}`}>{actor.name}</Link>
-        </div>
+        </li>
           );
     });
 
     let reviewList = this.state.reviews.map((review) => {
       return(
         <div key={review.id}>
-          {review.rating}
+          <i className="fa fa-star">{review.rating}</i> &nbsp;
           {review.body}
         </div>
       )
@@ -102,21 +102,38 @@ class MovieShow extends Component {
       )
     })
     return(
-      <div><h1>Movie details:</h1>
-      <div><h2>{this.state.movieInfo.title}</h2></div>
-        <img src={this.state.movieInfo.image_url} width="150" height="200" />
-        <div>{this.state.imdbMovieInfo.Rated}</div>
-        <p>{this.state.movieInfo.plot}</p>
-        <div><h3>Ratings:</h3>{ratingList}</div>
-        <div><h3>Actors:</h3>{actors}</div>
-        <div><h2>Reviews:</h2>{reviewList}</div>
-        <div>
-          <ReactPlayer url={this.state.movieInfo.trailer_url} playing />
+
+      <div>
+        <div><h3 className="movie-title">{this.state.movieInfo.title}</h3></div>
+
+        <div className="row">
+          <div className="small-2 medium-3 large-4 columns">
+              <ReactPlayer url={this.state.movieInfo.trailer_url} playing />
+          </div>
+          {/* <div className="small-2 medium-3 large-4 columns">
+            <img src={this.state.movieInfo.image_url} width="300" height="150" />
+          </div> */}
         </div>
+        <div className="rating">
+          <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+            {ratingList}
+        </ul>
+        </div>
+        <div className="plot">
+          {this.state.movieInfo.plot}
+        </div>
+
+        <div className="cast"><h3>Cast</h3>
+        <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 actors">
+          {actors}
+        </ul>
+        </div>
+        <div className= "small-12 medium-8 columns">{reviewList}</div>
+
         <ReviewForm
           movieId = {this.state.movieInfo.id}
           addNewReview = {this.addNewReview}
-          />
+        />
       </div>
     )
   }

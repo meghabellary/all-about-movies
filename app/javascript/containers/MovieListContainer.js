@@ -34,17 +34,18 @@ class MovieListContainer extends Component {
   render(){
     let movieComponents = this.state.movies.map((movie) => {
       return (
-        <div className="panel" key={movie.id}>
-          <Link to={`movies/${movie.id}`}>{ movie.title }</Link>
-        </div>
+        <li key={movie.id}>
+          <Link to={`movies/${movie.id}`}><img src={movie.image_url} width="300" height="200" />
+          </Link>
+        </li>
           );
     });
 
   return(
-      <div><h1>List of Movies</h1>
-        <div className="small-12 medium-8 columns medium-centered">
+      <div><h1></h1>
+        <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {movieComponents}
-        </div>
+        </ul>
       </div>
     )
   }

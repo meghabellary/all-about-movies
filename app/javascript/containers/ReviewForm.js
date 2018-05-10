@@ -44,7 +44,7 @@ class ReviewForm extends React.Component {
   render(){
     return(
       <div>
-        <form  onSubmit={this.handleSubmit}>
+        <form  className="field small-8 columns" onSubmit={this.handleSubmit}>
         <RatingField
           content={this.state.reviewRating}
           label="Movie Rating (1-5)"
@@ -57,11 +57,13 @@ class ReviewForm extends React.Component {
             name="review-body"
             handleInput={this.handleBodyInput}
           />
+        <div className= "small-12 medium-8 columns">
         <div className="button-group">
           <button type="submit" className="button" onClick={this.handleClearForm}>Clear</button>
           &nbsp;
           <input className="button" type="submit" value="Submit" />
         </div>
+      </div>
       </form>
       </div>
     );

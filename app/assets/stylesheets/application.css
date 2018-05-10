@@ -17,13 +17,43 @@
  */
 
 /*body{
-  background-image: url("movie.jpg")
+  background-image: url("movie1.png")
 }*/
 
+body{
+  /*background-color: #000000;*/
+  font-family: 'Imprima';
+}
 
+
+.plot{
+  padding-left: 2rem;
+}
+
+.rating{
+  padding-left: 2rem;
+}
+
+.actors{
+  padding-left: 2rem;
+}
 
 h1{
+  font-family: 'Imprima';
   text-align: center
+}
+
+h3{
+  font-family: 'Imprima';
+  padding-left: 2rem;
+}
+
+.movie-title div{
+  padding-left: 2rem;
+}
+
+.movies{
+  padding-left: 2rem;
 }
 
 .panel{
