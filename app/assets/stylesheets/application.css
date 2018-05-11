@@ -17,15 +17,65 @@
  */
 
 /*body{
-  background-image: url("movie.jpg")
+  background-image: url("movie1.png")
 }*/
 
+/*.top-bar{
+  background: #2998E4;
+}*/
 
+body{
+  font-family: 'Imprima';
+  background-color: #DEE1EF
+}
+
+p{
+  padding-left: 1rem;
+}
+
+.image-actor{
+  padding-left: 2rem;
+}
+
+.plot{
+  padding-left: 2rem;
+}
+
+.rating{
+  padding-left: 2rem;
+}
+
+.actors{
+  padding-left: 2rem;
+}
 
 h1{
+  font-family: 'Imprima';
   text-align: center
 }
 
-.panel{
+h3{
+  font-family: 'Imprima';
+  padding-left: 8rem
+}
+
+h2{
+  font-family: 'Imprima';
+  text-align: center
+}
+
+.movies{
+  padding-left: 2rem;
+}
+
+.rating-tiles {
+    margin: auto;
+    text-align: center;
+}
+
+.rating-tiles > li {
+  display: inline-block;
   text-align: center;
+  margin: auto;
+  padding: 1rem;
 }

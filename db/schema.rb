@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_05_06_160013) do
   enable_extension "plpgsql"
 
   create_table "actors", force: :cascade do |t|
+    t.string "image_url"
     t.string "name", null: false
     t.integer "age", null: false
     t.text "description"
