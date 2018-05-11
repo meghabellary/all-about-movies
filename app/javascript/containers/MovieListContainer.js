@@ -43,7 +43,7 @@ class MovieListContainer extends Component {
 
   return(
       <div><h1></h1>
-        <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
+      <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {movieComponents}
         </ul>
       </div>

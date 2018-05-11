@@ -20,11 +20,22 @@
   background-image: url("movie1.png")
 }*/
 
+/*.top-bar{
+  background: #2998E4;
+}*/
+
 body{
-  /*background-color: #000000;*/
   font-family: 'Imprima';
+  background-color: #DEE1EF
 }
 
+p{
+  padding-left: 1rem;
+}
+
+.image-actor{
+  padding-left: 2rem;
+}
 
 .plot{
   padding-left: 2rem;
@@ -45,17 +56,26 @@ h1{
 
 h3{
   font-family: 'Imprima';
-  padding-left: 2rem;
+  padding-left: 8rem
 }
 
-.movie-title div{
-  padding-left: 2rem;
+h2{
+  font-family: 'Imprima';
+  text-align: center
 }
 
 .movies{
   padding-left: 2rem;
 }
 
-.panel{
+.rating-tiles {
+    margin: auto;
+    text-align: center;
+}
+
+.rating-tiles > li {
+  display: inline-block;
   text-align: center;
+  margin: auto;
+  padding: 1rem;
 }

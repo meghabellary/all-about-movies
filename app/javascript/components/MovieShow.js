@@ -22,7 +22,7 @@ class MovieShow extends Component {
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
- }
+  }
 
   addNewReview(formPayload) {
     fetch('/api/v1/reviews.json', {
@@ -31,20 +31,20 @@ class MovieShow extends Component {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(formPayload)
     })
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
-          throw(error);
-        }
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(responseReview => {
+      let newReviews = this.state.reviews.concat(responseReview)
+      this.setState({
+        reviews: newReviews
       })
-      .then(response => response.json())
-      .then(responseReview => {
-          let newReviews = this.state.reviews.concat(responseReview)
-          this.setState({
-            reviews: newReviews
-          })
 
     })
   }
@@ -58,7 +58,7 @@ class MovieShow extends Component {
         return response;
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
+        error = new Error(errorMessage);
         throw(error);
       }
     })
@@ -66,7 +66,7 @@ class MovieShow extends Component {
 
     .then(body => {
       console.log(body)
-        this.setState({
+      this.setState({
         movieInfo: body, actors: body.actor_list, reviews: body.reviews
       });
       this.getImdbdata()
@@ -79,9 +79,9 @@ class MovieShow extends Component {
     let actors = this.state.actors.map((actor) => {
       return (
         <li key={actor.id}>
-          <Link to={`actors/${actor.id}`}>{actor.name}</Link>
+          <Link to={`/actors/${actor.id}`}>{actor.name}</Link>
         </li>
-          );
+      );
     });
 
     let reviewList = this.state.reviews.map((review) => {
@@ -102,41 +102,37 @@ class MovieShow extends Component {
       )
     })
     return(
-
       <div>
-        <div><h3 className="movie-title">{this.state.movieInfo.title}</h3></div>
-
-        <div className="row">
-          <div className="small-2 medium-3 large-4 columns">
+        <div><h2>{this.state.movieInfo.title}</h2></div>
+          <div className="row">
+            <div className="small-12 medium-8 columns medium-centered">
               <ReactPlayer url={this.state.movieInfo.trailer_url} playing />
-          </div>
+            </div>
           {/* <div className="small-2 medium-3 large-4 columns">
-            <img src={this.state.movieInfo.image_url} width="300" height="150" />
-          </div> */}
-        </div>
+          <img src={this.state.movieInfo.image_url} width="300" height="150" />
+        </div> */}
+          </div>
         <div className="rating">
-          <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+          <ul className="rating-tiles">
             {ratingList}
-        </ul>
+          </ul>
         </div>
-        <div className="plot">
+        <div className="panel plot medium-10 columns medium-centered">
           {this.state.movieInfo.plot}
         </div>
-
-        <div className="cast"><h3>Cast</h3>
-        <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 actors">
+      <div className="cast"><h3>Cast</h3>
+        <ul className="panel plot medium-10 columns medium-centered actors">
           {actors}
         </ul>
-        </div>
-        <div className= "small-12 medium-8 columns">{reviewList}</div>
-
+      </div>
+      <div className= "panel  medium-10 columns medium-centered">{reviewList}</div>
         <ReviewForm
           movieId = {this.state.movieInfo.id}
           addNewReview = {this.addNewReview}
         />
       </div>
-    )
-  }
+  )
+}
 }
 
 export default MovieShow;
