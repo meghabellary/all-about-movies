@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.text :body, null:false
       t.integer :rating, null:false
       t.belongs_to :movie, null:false
+      t.belongs_to :user, null:false
 
       t.timestamps
     end

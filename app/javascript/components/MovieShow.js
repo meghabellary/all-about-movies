@@ -87,8 +87,13 @@ class MovieShow extends Component {
     let reviewList = this.state.reviews.map((review) => {
       return(
         <div key={review.id}>
+          <div>Review by: &nbsp;
+          {review.user_name}
+        </div>
+        <div>
           <i className="fa fa-star">{review.rating}</i> &nbsp;
           {review.body}
+        </div>
         </div>
       )
     })
