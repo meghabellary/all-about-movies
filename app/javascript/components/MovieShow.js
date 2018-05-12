@@ -16,7 +16,7 @@ class MovieShow extends Component {
     fetch(`http://www.omdbapi.com/?i=${imdbId}&apikey=50903f61`)
     .then(response => response.json())
     .then(body => {
-      console.log(body)
+      //console.log(body)
       this.setState({
         imdbMovieInfo: body, ratings: body.Ratings
       });
@@ -65,7 +65,7 @@ class MovieShow extends Component {
     .then(response => response.json())
 
     .then(body => {
-      console.log(body)
+      //console.log(body)
       this.setState({
         movieInfo: body, actors: body.actor_list, reviews: body.reviews
       });
@@ -75,7 +75,7 @@ class MovieShow extends Component {
   }
 
   render(){
-    // console.log(this.state.movieInfo.actor_list)
+    // console.console.log();(this.state.movieInfo.actor_list)
     let actors = this.state.actors.map((actor) => {
       return (
         <li key={actor.id}>
@@ -108,6 +108,7 @@ class MovieShow extends Component {
     })
     return(
       <div>
+        <Link to={`/favorites`}> My Favorties </Link>
         <div><h2>{this.state.movieInfo.title}</h2></div>
           <div className="row">
             <div className="small-12 medium-8 columns medium-centered">
