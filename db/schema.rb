@@ -48,9 +48,11 @@ ActiveRecord::Schema.define(version: 2018_05_06_160013) do
     t.text "body", null: false
     t.integer "rating", null: false
     t.bigint "movie_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_reviews_on_movie_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

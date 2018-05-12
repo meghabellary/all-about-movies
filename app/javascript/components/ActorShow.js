@@ -44,9 +44,7 @@ class ActorShow extends Component {
             {this.state.actorInfo.description}
           </div>
         </div>
-
-
-    )
+      )
   }
 
 }
