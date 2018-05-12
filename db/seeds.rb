@@ -50,6 +50,16 @@ MovieActor.create(movie: the_incredible_hulk, actor: edward_norton)
 MovieActor.create(movie: wonder_woman, actor: gal_gadot)
 MovieActor.create(movie: black_panther, actor: chadwick_boseman)
 
+meghab = User.create(email: "megha@movie.com", password: "123456")
+vishu = User.create(email: "vishu@movie.com", password: "123456")
+
+Favorite.create(user: meghab ,movie: batman_begins)
+Favorite.create(user: meghab ,movie: the_dark_knight)
+Favorite.create(user: vishu ,movie: batman_begins)
+Favorite.create(user: vishu ,movie: iron_man)
+Favorite.create(user: meghab ,movie: iron_man2)
+
+
 # Review.create(body: "It was awesome", rating: 5, movie: batman_begins)
 # Review.create(body: "Liked it", rating: 3, movie: batman_begins)
 # Review.create(body: "Loved the movie", rating: 5, movie: the_dark_knight)
