@@ -9,6 +9,7 @@ class MovieShow extends Component {
     this.state = { movieInfo: {}, imdbMovieInfo: {}, actors: [], reviews: [], ratings: [] };
     this.addNewReview = this.addNewReview.bind(this);
     this.getImdbdata = this.getImdbdata.bind(this);
+    this.addNewFavorite = this.addNewFavorite.bind(this)
   }
 
   getImdbdata() {
@@ -45,8 +46,30 @@ class MovieShow extends Component {
       this.setState({
         reviews: newReviews
       })
-
     })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+  addNewFavorite() {
+    let movieId = this.state.movieInfo.id;
+    fetch('/api/v1/favorites.json', {
+      credentials: 'same-origin',
+      method: 'post',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({movie_id: movieId})
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(responseFavorite => {
+      console.log(responseFavorite)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount(){
@@ -109,6 +132,7 @@ class MovieShow extends Component {
     return(
       <div>
         <Link to={`/favorites`}> My Favorties </Link>
+        <Link to={`/favorites`} onClick={this.addNewFavorite}> Add to My Favorties </Link>
         <div><h2>{this.state.movieInfo.title}</h2></div>
           <div className="row">
             <div className="small-12 medium-8 columns medium-centered">
