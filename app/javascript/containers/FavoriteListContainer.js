@@ -6,10 +6,12 @@ import { Link } from 'react-router';
 class FavoriteListContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { favoriteMovies: []};
+    this.state = { favoriteMovies: [], favorites: []};
+    this.getFavorites = this.getFavorites.bind(this);
+    this.removeFavorite = this.removeFavorite.bind(this);
   }
 
-  componentDidMount(){
+  getFavorites() {
     fetch('/api/v1/favorites.json', {
     credentials: 'same-origin',
   })
@@ -28,19 +30,46 @@ class FavoriteListContainer extends Component {
     .then(body => {
       console.log(body)
       this.setState({
-        favoriteMovies: body.movies
+        favoriteMovies: body.movies,
+        favorites : body.favorites
       });
 
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
+  componentDidMount(){
+    this.getFavorites();
+  }
+
+  removeFavorite(id) {
+    // let movieId = 1
+    fetch(`/api/v1/favorites/${id}`, {
+      credentials: 'same-origin',
+      method: 'DELETE',
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(responseFavorite => {
+      console.log(responseFavorite)
+      this.getFavorites();
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
 
   render(){
-    let favoriteMovieComponents = this.state.favoriteMovies.map((movie) => {
+    let favoriteMovieComponents = this.state.favorites.map((favorite) => {
       return (
-        <li key={movie.id}>
-          <Link to={`movies/${movie.id}`}><img src={movie.image_url} width="300" height="200" />
+        <li key={favorite.id}>
+          <Link to={`movies/${favorite.movie.id}`}><img src={favorite.movie.image_url} width="300" height="200" />
           </Link>
+          <Link to={`/favorites`} onClick={this.removeFavorite.bind(this, favorite.id)}> Remove </Link>
         </li>
           );
     });

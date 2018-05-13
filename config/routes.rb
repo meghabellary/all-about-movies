@@ -26,6 +26,7 @@ Rails.application.routes.draw do
           namespace :v1 do
             resources :favorites, only: [:index]
             resources :favorites, only: [:create]
+            resources :favorites, only: [:destroy]
           end
       end
 end
