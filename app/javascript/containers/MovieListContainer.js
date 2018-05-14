@@ -7,6 +7,7 @@ class MovieListContainer extends Component {
     super(props);
     this.state = { movies: []};
     this.getMovies = this.getMovies.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   getMovies() {
@@ -31,7 +32,27 @@ class MovieListContainer extends Component {
     this.getMovies();
   }
 
+  handleChange(event) {
+    let input = event.target.value;
+    let tempResults = []
+    //this.getMovies();
+    if(input != "")  {
+
+      this.state.movies.forEach((movie) => {
+        if (movie.title.toLowerCase().includes(input.toLowerCase())) {
+          tempResults.push(movie)
+        }
+      })
+    } else {
+      tempResults = this.getMovies();
+    }
+    this.setState({
+      movies: tempResults
+    })
+  }
+
   render(){
+
     let movieComponents = this.state.movies.map((movie) => {
       return (
         <li key={movie.id}>
@@ -42,7 +63,9 @@ class MovieListContainer extends Component {
     });
 
   return(
+
       <div><h1></h1>
+      <input type='text' onChange={this.handleChange} placeholder="Search movie!"/>
       <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {movieComponents}
         </ul>
