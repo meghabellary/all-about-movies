@@ -10,7 +10,8 @@ class Api::V1::FavoritesController < ApiController
     data = JSON.parse(request.body.read)
     new_favorite = Favorite.new(movie_id: data["movie_id"], user_id: present_user.id)
     new_favorite.save
-      render json: new_favorite
+    render json: new_favorite
+    # flash[:notice] = "Company added successfully"
   end
 
   def destroy
@@ -19,6 +20,4 @@ class Api::V1::FavoritesController < ApiController
     delete_favorite_movie.destroy
       render json: favorite_movie_deleted
   end
-
-
 end

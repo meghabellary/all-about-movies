@@ -68,6 +68,7 @@ class MovieShow extends Component {
     .then(response => response.json())
     .then(responseFavorite => {
       console.log(responseFavorite)
+      // console.log(responseFavorite.message)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -101,9 +102,9 @@ class MovieShow extends Component {
     // console.console.log();(this.state.movieInfo.actor_list)
     let actors = this.state.actors.map((actor) => {
       return (
-        <li key={actor.id}>
+        <div key={actor.id}>
           <Link to={`/actors/${actor.id}`}>{actor.name}</Link>
-        </li>
+        </div>
       );
     });
 
@@ -131,8 +132,12 @@ class MovieShow extends Component {
     })
     return(
       <div>
+        <div className="favorites">
         <Link to={`/favorites`}> My Favorties </Link>
+      </div>
+      <div className="favorites">
         <Link to={`/favorites`} onClick={this.addNewFavorite}> Add to My Favorties </Link>
+      </div>
         <div><h2>{this.state.movieInfo.title}</h2></div>
           <div className="row">
             <div className="small-12 medium-8 columns medium-centered">

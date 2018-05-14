@@ -60,9 +60,9 @@ class ReviewForm extends React.Component {
           />
         <div className= "small-12 medium-8 columns">
         <div className="button-group">
-          <input type="submit" className="button" value="Clear" onClick={this.handleClearForm}/>
+          <input type="submit" className="button radius" value="Clear" onClick={this.handleClearForm}/>
           &nbsp;
-          <input className="button" type="submit" value="Submit" />
+          <input className="button radius" type="submit" value="Submit" />
         </div>
       </div>
       </form>
