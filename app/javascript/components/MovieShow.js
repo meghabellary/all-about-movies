@@ -148,7 +148,7 @@ class MovieShow extends Component {
         </div> */}
           </div>
         <div className="rating">
-          <ul className="rating-tiles">
+          <ul className="rating-tiles"> 
             {ratingList}
           </ul>
         </div>
