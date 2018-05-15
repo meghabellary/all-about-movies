@@ -48,7 +48,7 @@ class ReviewForm extends React.Component {
         <form  className="field  medium-8 columns medium-centered" onSubmit={this.handleSubmit}>
         <RatingField
           content={this.state.reviewRating}
-          label="Movie Rating (1-5)"
+          label="Movie Rating"
           name="review-rating"
           handleInput={this.handleRatingInput}
         />

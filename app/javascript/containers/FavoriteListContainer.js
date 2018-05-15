@@ -75,8 +75,8 @@ class FavoriteListContainer extends Component {
     });
 
   return(
-      <div><h1></h1>
-      <div className="panel small-12 medium-8 columns medium-centered">
+      <div><h1>Your Favorites list!</h1>
+      <div className="panel medium-10 columns medium-centered">
       <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {favoriteMovieComponents}
         </ul>
