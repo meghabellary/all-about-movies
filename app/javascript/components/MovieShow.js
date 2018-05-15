@@ -109,6 +109,7 @@ class MovieShow extends Component {
     });
     let star = []
     let reviewList = this.state.reviews.map((review) => {
+      star = []
       for(let i = 0;i < review.rating; i++) {
         star.push(<i className="fa fa-star"></i>)
       }
