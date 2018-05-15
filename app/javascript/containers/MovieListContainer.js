@@ -64,11 +64,11 @@ class MovieListContainer extends Component {
   return(
 
       <div><h1></h1>
-      <div className="searchapp small-12 medium-4 columns">
+    <div className="searchapp small-12 medium-4 columns">
         <input type='text' onChange={this.handleChange} placeholder="Search movie!"/>
       </div>
       <div className="favorites">
-        <Link to={`/favorites`}> My Favorties </Link>
+        <Link to={`/favorites`}> My Favorites!</Link>
       </div>
       <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {movieComponents}
