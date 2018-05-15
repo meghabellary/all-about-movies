@@ -32,7 +32,16 @@
         <%- end -%>
       </ul>
     </section>
-  </nav>
+    <script>
+        function goBack() {
+          window.history.back()
+        }
+      </script>
+    </nav>
+
+    <div class="gobackbutton">
+      <button class="button small radius" onclick="goBack()">Back</button>
+    </div>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">

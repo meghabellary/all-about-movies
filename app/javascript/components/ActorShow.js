@@ -36,12 +36,12 @@ class ActorShow extends Component {
 
       <div className="panel medium-10 columns medium-centered">
           <div><img src={this.state.actorInfo.image_url} width="300" height="200" /></div>
-          <div>{this.state.actorInfo.name}</div>
+          <div><h6>Name: {this.state.actorInfo.name}</h6></div>
           <div className="age">
-            {this.state.actorInfo.age}
+            <h6>Age: {this.state.actorInfo.age}</h6>
           </div>
           <div>
-            {this.state.actorInfo.description}
+            <h6>Description: {this.state.actorInfo.description}</h6>
           </div>
         </div>
       )
