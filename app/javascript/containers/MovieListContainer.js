@@ -50,7 +50,7 @@ class MovieListContainer extends Component {
     })
   }
 
-  render(){ 
+  render(){
 
     let movieComponents = this.state.movies.map((movie) => {
       return (
@@ -65,8 +65,11 @@ class MovieListContainer extends Component {
 
       <div><h1></h1>
       <div className="searchapp small-12 medium-4 columns">
-      <input type='text' onChange={this.handleChange} placeholder="Search movie!"/>
-    </div>
+        <input type='text' onChange={this.handleChange} placeholder="Search movie!"/>
+      </div>
+      <div className="favorites">
+        <Link to={`/favorites`}> My Favorties </Link>
+      </div>
       <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {movieComponents}
         </ul>

@@ -14,7 +14,7 @@ class MovieShow extends Component {
 
   getImdbdata() {
     let imdbId = this.state.movieInfo.imbd_movie_id
-    fetch(`http://www.omdbapi.com/?i=${imdbId}&apikey=50903f61`)
+    fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=50903f61`)
     .then(response => response.json())
     .then(body => {
       //console.log(body)
@@ -136,9 +136,6 @@ class MovieShow extends Component {
     })
     return(
       <div>
-        <div className="favorites">
-          <Link to={`/favorites`}> My Favorties </Link>
-      </div>
       <div className="favorites">
         <Link to={`/favorites`} onClick={this.addNewFavorite}> Add to My Favorties </Link>
       </div>

@@ -41,7 +41,7 @@ class ActorShow extends Component {
         <div className="medium-8 columns">
           <h6>Name: {this.state.actorInfo.name}</h6>
           <h6 className="age">Age: {this.state.actorInfo.age}</h6>
-          <h6 className="description">Description: {this.state.actorInfo.description}</h6>
+          <h6 className="description">{this.state.actorInfo.description}</h6>
       </div>
       </div>
     </div>

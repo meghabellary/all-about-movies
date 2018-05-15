@@ -26,7 +26,8 @@
 
 body{
   font-family: 'Imprima';
-  background-color: #F7F5E6
+  background-color: #F7F5E6;
+  /*background-image: url(cinema.jpeg)*/
 }
 
 .favorites{
@@ -82,6 +83,11 @@ h3{
   padding-left: 8rem
 }
 
+h4{
+  font-family: 'Imprima';
+  padding-left: 1rem
+}
+
 h2{
   font-family: 'Imprima';
   text-align: center
@@ -118,6 +124,11 @@ h2{
 
 .top-bar-section li:not(.has-form) a:not(.button).devise-button{
   font-family: 'Imprima';
+}
+
+.log-in-image {
+  width: 50%;
+  margin:auto;
 }
 /*.actorimage{
   padding-left: 8rem;
