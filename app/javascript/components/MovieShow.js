@@ -107,15 +107,19 @@ class MovieShow extends Component {
         </div>
       );
     });
-
+    let star = []
     let reviewList = this.state.reviews.map((review) => {
+      for(let i = 0;i < review.rating; i++) {
+        star.push(<i className="fa fa-star"></i>)
+      }
       return(
         <div key={review.id}>
           <div>Review by: &nbsp;
           {review.user_name}
         </div>
         <div>
-          <i className="fa fa-star">{review.rating}</i> &nbsp;
+          {/* <i className="fa fa-star">{review.rating}</i> &nbsp; */}
+          {star} &nbsp;
           {review.body}
         </div>
         </div>
@@ -133,7 +137,7 @@ class MovieShow extends Component {
     return(
       <div>
         <div className="favorites">
-        <Link to={`/favorites`}> My Favorties </Link>
+          <Link to={`/favorites`}> My Favorties </Link>
       </div>
       <div className="favorites">
         <Link to={`/favorites`} onClick={this.addNewFavorite}> Add to My Favorties </Link>
@@ -148,7 +152,7 @@ class MovieShow extends Component {
         </div> */}
           </div>
         <div className="rating">
-          <ul className="rating-tiles"> 
+          <ul className="rating-tiles">
             {ratingList}
           </ul>
         </div>

@@ -92,8 +92,8 @@ h2{
 }
 
 .rating-tiles {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
 
 .rating-tiles > li {
@@ -107,3 +107,18 @@ h2{
 .gobackbutton {
   padding: .5rem .5rem .9rem;
 }
+
+.description{
+  text-align: justify;
+}
+
+.right{
+  font-family: 'Imprima';
+}
+
+.top-bar-section li:not(.has-form) a:not(.button).devise-button{
+  font-family: 'Imprima';
+}
+/*.actorimage{
+  padding-left: 8rem;
+}*/
