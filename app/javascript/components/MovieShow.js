@@ -14,7 +14,7 @@ class MovieShow extends Component {
 
   getImdbdata() {
     let imdbId = this.state.movieInfo.imbd_movie_id
-    fetch(`http://www.omdbapi.com/?i=${imdbId}&apikey=50903f61`)
+    fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=50903f61`)
     .then(response => response.json())
     .then(body => {
       //console.log(body)
@@ -148,7 +148,7 @@ class MovieShow extends Component {
         </div> */}
           </div>
         <div className="rating">
-          <ul className="rating-tiles"> 
+          <ul className="rating-tiles">
             {ratingList}
           </ul>
         </div>
