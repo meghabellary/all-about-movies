@@ -1,26 +1,26 @@
 <div class="log-in-image"><%= image_tag "movie.jpg"%> </div>
-<h4>Log in</h4>
+<h4 class="field small-2 columns medium-centered">Log in</h4>
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field small-8 columns">
+  <div class="field small-8 columns medium-centered">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field small-8 columns">
+  <div class="field small-8 columns  medium-centered">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field small-8 columns">
+    <div class="field small-8 columns medium-centered">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end -%>
 <ul class="button-group">
-  <div class="actions small-8 columns">
+  <div class="actions small-8 columns medium-centered">
     <%= f.submit "Log in" , :class => 'button small radius' %>
   </div>
 </ul>

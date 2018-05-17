@@ -13,8 +13,9 @@ const RatingField = (props) => {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-    </label> 
+    </label>
   )
 }
 
 export default RatingField;
+ 

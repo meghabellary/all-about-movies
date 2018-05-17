@@ -109,7 +109,7 @@ class MovieShow extends Component {
     let actors = this.state.actors.map((actor) => {
       return (
         <div key={actor.id}>
-          <Link to={`/actors/${actor.id}`}>{actor.name}</Link>
+        <Link to={`/actors/${actor.id}`}><h6>{actor.name}</h6></Link>
         </div>
       );
     });
@@ -144,7 +144,7 @@ class MovieShow extends Component {
     return(
       <div>
       <div className="favorites">
-        <Link to={`/favorites`} onClick={this.addNewFavorite}> Add to My Favorties </Link>
+        <Link to={`/favorites`} onClick={this.addNewFavorite}><h5> Add to My Favorites! </h5></Link>
       </div>
         <div><h2>{this.state.movieInfo.title}</h2></div>
           <div className="row">

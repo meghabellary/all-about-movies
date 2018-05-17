@@ -69,13 +69,13 @@ class FavoriteListContainer extends Component {
         <li key={favorite.id}>
           <Link to={`movies/${favorite.movie.id}`}><img src={favorite.movie.image_url} width="300" height="200" />
           </Link>
-          <Link to={`/favorites`} onClick={this.removeFavorite.bind(this, favorite.id)}> Remove </Link>
+          <Link to={`/favorites`} onClick={this.removeFavorite.bind(this, favorite.id)}><h6> Remove </h6></Link>
         </li>
           );
     });
 
   return(
-      <div><h2>Your Favorites list!</h2>
+      <div><h2>My Favorites list!</h2>
       <div className="panel medium-10 columns medium-centered">
       <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {favoriteMovieComponents}
