@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player'
 class MovieShow extends Component {
   constructor(props){
     super(props);
-    this.state = { movieInfo: {}, imdbMovieInfo: {}, actors: [], reviews: [], ratings: [] };
+    this.state = { movieInfo: {}, imdbMovieInfo: {}, actors: [], reviews: [], ratings: [], errorMessage: '' };
     this.addNewReview = this.addNewReview.bind(this);
     this.getImdbdata = this.getImdbdata.bind(this);
     this.addNewFavorite = this.addNewFavorite.bind(this)
@@ -42,10 +42,16 @@ class MovieShow extends Component {
     })
     .then(response => response.json())
     .then(responseReview => {
-      let newReviews = this.state.reviews.concat(responseReview)
-      this.setState({
-        reviews: newReviews
-      })
+      console.log(responseReview);
+      if (responseReview['id'] == 'error message') {
+          this.setState({ errorMessage: responseReview['body'] })
+        } else {
+          let newReviews = this.state.reviews.concat(responseReview)
+            this.setState({
+            reviews: newReviews,
+            errorMessage: ''
+          })
+        }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -68,7 +74,6 @@ class MovieShow extends Component {
     .then(response => response.json())
     .then(responseFavorite => {
       console.log(responseFavorite)
-      // console.log(responseFavorite.message)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -100,6 +105,7 @@ class MovieShow extends Component {
 
   render(){
     // console.console.log();(this.state.movieInfo.actor_list)
+    let errorDiv = <div className="react-message">{this.state.errorMessage}</div>
     let actors = this.state.actors.map((actor) => {
       return (
         <div key={actor.id}>
@@ -163,6 +169,7 @@ class MovieShow extends Component {
         </ul>
       </div>
       <div className= "panel  medium-10 columns medium-centered">{reviewList}</div>
+      <div className= "medium-8 columns medium-centered">{errorDiv}</div>
         <ReviewForm
           movieId = {this.state.movieInfo.id}
           addNewReview = {this.addNewReview}

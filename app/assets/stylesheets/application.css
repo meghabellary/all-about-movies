@@ -27,9 +27,13 @@
 body{
   font-family: 'Imprima';
   background-color: #F7F5E6;
+  /*padding: 50px 75px 100px;*/
   /*background-image: url(cinema.jpeg)*/
 }
-
+.movies{
+  /*padding-right: 20px;*/
+  padding-left: 20px
+}
 .favorites{
   padding-left: 1rem;
 }
@@ -108,7 +112,6 @@ h2{
   margin: auto;
   padding: 1rem;
 }
-
 
 .gobackbutton {
   padding: .5rem .5rem .9rem;
