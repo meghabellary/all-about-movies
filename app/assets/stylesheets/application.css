@@ -27,26 +27,24 @@
 body{
   font-family: 'Imprima';
   background-color: #F7F5E6;
-  /*padding: 50px 75px 100px;*/
-  /*background-image: url(cinema.jpeg)*/
 }
 .movies{
   /*padding-right: 20px;*/
   padding-left: 20px
 }
 .favorites{
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 
-.forgot{
+/*.forgot{
   padding-left: 1rem;
-}
+}*/
 .flash-alert{
     color: #8B0000
 }
 
 .flash{
-  padding-left: 1rem
+  padding-left: 2rem
 }
 
 p{
@@ -97,6 +95,10 @@ h2{
   text-align: center
 }
 
+h5{
+  font-family: 'Imprima'
+}
+
 .movies{
   padding-left: 2rem;
 }
@@ -114,7 +116,7 @@ h2{
 }
 
 .gobackbutton {
-  padding: .5rem .5rem .9rem;
+  padding: 1rem 2rem 1rem;
 }
 
 .description{
@@ -123,6 +125,10 @@ h2{
 
 .right{
   font-family: 'Imprima';
+}
+
+.searchapp{
+  padding-left: 2em;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button).devise-button{
