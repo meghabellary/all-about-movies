@@ -6,26 +6,7 @@
 
 
 # README
+Application: AllAboutMovies
+Heroku link:https://allaboutmovies.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A user can sign in or sign up to see a list of movies. Search	for a specific movie, go to a movie details page where they can play a trailer, can view the cast, plot and ratings from IMDB and rotten tomatoes ratings. I used an external API called OMDB to show the ratings. A user can add a review and rating to a movie. They can go to an actor’s details page. A user can also maintain their favorites list. They can add a movie to their favorites list. On their favorites list they can remove a movie if they do not like it. I built all the internal API endpoints with Ruby on Rails. The frontend is built in React. I used PostgreSQL database to store the data.
