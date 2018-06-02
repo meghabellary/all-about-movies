@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player'
 class MovieShow extends Component {
   constructor(props){
     super(props);
-    this.state = { movieInfo: {}, imdbMovieInfo: {}, actors: [], reviews: [], ratings: [], errorMessage: '' };
+    this.state = { movieInfo: {}, imdbMovieInfo: {}, imdbPlot: '',actors: [], reviews: [], ratings: [], errorMessage: '' };
     this.addNewReview = this.addNewReview.bind(this);
     this.getImdbdata = this.getImdbdata.bind(this);
     this.addNewFavorite = this.addNewFavorite.bind(this)
@@ -19,7 +19,7 @@ class MovieShow extends Component {
     .then(body => {
       //console.log(body)
       this.setState({
-        imdbMovieInfo: body, ratings: body.Ratings
+        imdbMovieInfo: body, ratings: body.Ratings, imdbPlot:body.Plot
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -161,7 +161,7 @@ class MovieShow extends Component {
           </ul>
         </div>
         <div className="panel plot medium-10 columns medium-centered">
-          {this.state.movieInfo.plot}
+          {this.state.imdbPlot}
         </div>
       <div className="cast"><h3>Cast</h3>
         <ul className="panel plot medium-10 columns medium-centered actors">
