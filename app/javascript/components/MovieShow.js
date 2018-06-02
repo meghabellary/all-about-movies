@@ -161,6 +161,9 @@ class MovieShow extends Component {
           </ul>
         </div>
         <div className="panel plot medium-10 columns medium-centered">
+          Director : {this.state.imdbMovieInfo.Director}
+        </div>
+        <div className="panel plot medium-10 columns medium-centered">
           {this.state.imdbPlot}
         </div>
       <div className="cast"><h3>Cast</h3>
