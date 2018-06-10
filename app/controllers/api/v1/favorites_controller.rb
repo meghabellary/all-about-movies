@@ -17,6 +17,6 @@ class Api::V1::FavoritesController < ApiController
     delete_favorite_movie = Favorite.find(params[:id])
     favorite_movie_deleted = delete_favorite_movie
     delete_favorite_movie.destroy
-    render json: favorite_movie_deleted
+    render json: favorite_movie_deleted 
   end
 end

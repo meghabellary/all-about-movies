@@ -17,7 +17,7 @@ class MovieShow extends Component {
     fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=50903f61`)
     .then(response => response.json())
     .then(body => {
-      //console.log(body)
+      console.log(body)
       this.setState({
         imdbMovieInfo: body, ratings: body.Ratings, imdbPlot:body.Plot
       });
@@ -163,6 +163,10 @@ class MovieShow extends Component {
         <div className="panel plot medium-10 columns medium-centered">
           Director : {this.state.imdbMovieInfo.Director}
         </div>
+        <div className="panel plot medium-10 columns medium-centered">
+          Website : {this.state.imdbMovieInfo.Website}
+        </div>
+
         <div className="panel plot medium-10 columns medium-centered">
           {this.state.imdbPlot}
         </div>
