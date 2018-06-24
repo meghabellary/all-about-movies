@@ -144,7 +144,7 @@ class MovieShow extends Component {
     return(
       <div>
       <div className="favorites">
-        <Link to={`/favorites`} onClick={this.addNewFavorite}><h5> Add to My Favorites! </h5></Link>
+        <Link to={`/favorites`} onClick={this.addNewFavorite}><h5 className="button radius"> Add to My Favorites! </h5></Link>
       </div>
         <div><h2>{this.state.movieInfo.title}</h2></div>
           <div className="row">
