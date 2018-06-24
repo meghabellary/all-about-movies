@@ -68,7 +68,7 @@ class MovieListContainer extends Component {
         <input type='text' onChange={this.handleChange} placeholder="Search movie!"/>
       </div>
       <div className="favorites">
-        <Link to={`/favorites`}> <h4>My Favorites!</h4></Link>
+        <Link to={`/favorites`}> <h4 className="button radius">My Favorites!</h4></Link>
       </div>
       <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4 movies">
           {movieComponents}
