@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
- 
+
  */
 
 /*body{
@@ -82,7 +82,9 @@ h6{
 
 h3{
   font-family: 'Imprima';
-  padding-left: 8rem
+  /*padding-left: 8rem;*/
+  text-align: center
+
 }
 
 h4{
